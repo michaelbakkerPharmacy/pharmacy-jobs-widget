@@ -1,77 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Pharmacy Jobs</title>
-  <script type="text/javascript" src="https://careers.pageuppeople.com/Content/CareersControls.js"></script>
-  <style>
-    #Pharmacy-Jobs .job-listing-wrapper ul {
-        list-style: none;
-        width: 525px;
-    }
+<script type="text/javascript" src="https://careers.pageuppeople.com/Content/CareersControls.js"></script>
+<style type="text/css">
+#Pharmacy-Jobs .job-listing-wrapper ul {
+    list-style: none;
+    width:525px;
+}
 
-    #Pharmacy-Jobs .job-listing-wrapper ul li {
-        padding-left: 0px;
-        background: none;
-    }
+#Pharmacy-Jobs .job-listing-wrapper ul li {
+    padding-left: 0px;
+    background: none;
+}
 
-    #Pharmacy-Jobs .job-listing-wrapper ul li li {
-        padding-left: 0px;
-        background: none;
-    }
+#Pharmacy-Jobs .job-listing-wrapper ul li li {
+    padding-left: 0px;
+    background: none;
+}
+#Pharmacy-Jobs .job-listing-wrapper p{
+    padding-left: 10px;
+}
+#Pharmacy-Jobs .job-listing-wrapper .jobs-item ul li{
+    padding-left: 25px;
+    list-style:disc inside;
+}
+#Pharmacy-Jobs  a.active-page {
+    color:#505050;
+    float:left;
+    padding-left:6px;
+    font-weight:bold;
+    text-decoration:underline;
+    cursor:pointer;
 
-    #Pharmacy-Jobs .job-listing-wrapper p {
-        padding-left: 10px;
-    }
+}
+#Pharmacy-Jobs a.inactive-page {
+    float:left;
+    padding-left:6px;
+    cursor:pointer;
+}
+#PageUpPeopleLink { display: none; }
 
-    #Pharmacy-Jobs .job-listing-wrapper .jobs-item ul li {
-        padding-left: 25px;
-        list-style: disc inside;
-    }
+#Pharmacy-Jobs li.jobs-item { border-bottom: #eee 1px solid; margin-bottom: 5px; }
 
-    #Pharmacy-Jobs a.active-page {
-        color: #505050;
-        float: left;
-        padding-left: 6px;
-        font-weight: bold;
-        text-decoration: underline;
-        cursor: pointer;
-    }
+}
+</style>
 
-    #Pharmacy-Jobs a.inactive-page {
-        float: left;
-        padding-left: 6px;
-        cursor: pointer;
-    }
-
-    #PageUpPeopleLink {
-        display: none;
-    }
-
-    #Pharmacy-Jobs li.jobs-item {
-        border-bottom: #eee 1px solid;
-        margin-bottom: 5px;
-    }
-  </style>
-</head>
-<body>
-  <div id="Pharmacy-Jobs">
-    Loading jobs...
-  </div>
-
-  <script type="text/javascript">
-    window.onload = function () {
-      if (typeof Careers !== 'undefined' && Careers.jobListing) {
-        Careers.jobListing("Pharmacy-Jobs", "https://careers.pageuppeople.com/532/", "cw", "en", {
-          template: "<b><a href='[JobDetailUrl]'>[Title]</a></b> <br/> <p>[Summary]</p>",
-          jobsPerPage: 5,
-          paging: true,
-          filters: { "Keyword": "Pharmacy" }
-        });
-      } else {
-        console.error("CareersControls.js did not load correctly.");
-      }
-    };
-  </script>
-</body>
-</html>
+<div id="Pharmacy-Jobs">
+Loading jobs...
+</div>
+<script type="text/javascript">
+Careers.jobListing("Pharmacy-Jobs", "https://careers.pageuppeople.com/532/", "cw", "en", {
+template: "<b><a href=\"[JobDetailUrl]\">[Title]</a></b> <br/> <p>[Summary]</p>",
+jobsPerPage: 5, 
+paging: true,
+filters: { "Keyword": "Pharmacy" }
+}); 
+</script>
