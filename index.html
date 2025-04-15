@@ -1,55 +1,93 @@
+<!-- Load the PageUpPeople careers widget -->
 <script type="text/javascript" src="https://careers.pageuppeople.com/Content/CareersControls.js"></script>
+
+<!-- Styles for layout and improved font -->
 <style type="text/css">
-#Pharmacy-Jobs .job-listing-wrapper ul {
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  }
+
+  h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  #Pharmacy-Jobs .job-listing-wrapper ul {
     list-style: none;
-    width:650px;
-}
+    width: 650px;
+    padding: 0;
+  }
 
-#Pharmacy-Jobs .job-listing-wrapper ul li {
+  #Pharmacy-Jobs .job-listing-wrapper ul li {
     padding-left: 0px;
     background: none;
-}
+  }
 
-#Pharmacy-Jobs .job-listing-wrapper ul li li {
+  #Pharmacy-Jobs .job-listing-wrapper ul li li {
     padding-left: 0px;
     background: none;
-}
-#Pharmacy-Jobs .job-listing-wrapper p{
+  }
+
+  #Pharmacy-Jobs .job-listing-wrapper p {
     padding-left: 0px;
-}
-#Pharmacy-Jobs .job-listing-wrapper .jobs-item ul li{
+  }
+
+  #Pharmacy-Jobs .job-listing-wrapper .jobs-item ul li {
     padding-left: 0px;
-    list-style:disc inside;
-}
-#Pharmacy-Jobs  a.active-page {
-    color:#505050;
-    float:left;
-    padding-left:6px;
-    font-weight:bold;
-    text-decoration:underline;
-    cursor:pointer;
+    list-style: disc inside;
+  }
 
-}
-#Pharmacy-Jobs a.inactive-page {
-    float:left;
-    padding-left:6px;
-    cursor:pointer;
-}
-#PageUpPeopleLink { display: none; }
+  #Pharmacy-Jobs a.active-page {
+    color: #505050;
+    float: left;
+    padding-left: 6px;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
-#Pharmacy-Jobs li.jobs-item { border-bottom: #eee 1px solid; margin-bottom: 5px; }
+  #Pharmacy-Jobs a.inactive-page {
+    float: left;
+    padding-left: 6px;
+    cursor: pointer;
+  }
 
-}
+  #PageUpPeopleLink {
+    display: none;
+  }
+
+  #Pharmacy-Jobs li.jobs-item {
+    border-bottom: #eee 1px solid;
+    margin-bottom: 5px;
+  }
+
+  /* New style for font size control */
+  .job-item {
+    font-size: 16px; /* Adjust as needed */
+    line-height: 1.6;
+  }
+
+  .job-item a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .job-item a:hover {
+    text-decoration: underline;
+  }
 </style>
 
-<div id="Pharmacy-Jobs">
-Loading jobs...
-</div>
+<!-- Heading and job container -->
+<h2>Current SA Pharmacy Career Opportunities</h2>
+<div id="Pharmacy-Jobs">Loading jobs...</div>
+
+<!-- Init script for the widget -->
 <script type="text/javascript">
-Careers.jobListing("Pharmacy-Jobs", "https://careers.pageuppeople.com/532/", "cw", "en", {
-template: "<b><a href=\"[JobDetailUrl]\">[Title]</a></b> <br/> <p>[Summary]</p>",
-jobsPerPage: 10, 
-paging: true,
-filters: { "Keyword": "Pharmacy" }
-}); 
+  Careers.jobListing("Pharmacy-Jobs", "https://careers.pageuppeople.com/532/", "cw", "en", {
+    template: "<div class='job-item'><b><a href='[JobDetailUrl]' target='_blank'>[Title]</a></b><br/><p>[Summary]</p></div>",
+    jobsPerPage: 10,
+    paging: true,
+    filters: { "Keyword": "Pharmacy" }
+  });
 </script>
