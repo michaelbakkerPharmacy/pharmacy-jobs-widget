@@ -3,16 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <title>Pharmacy Jobs</title>
+  <script type="text/javascript" src="https://careers.pageuppeople.com/Content/CareersControls.js"></script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
+    #Pharmacy-Jobs .job-listing-wrapper ul {
+        list-style: none;
+        width: 525px;
+    }
+
+    #Pharmacy-Jobs .job-listing-wrapper ul li {
+        padding-left: 0px;
+        background: none;
+    }
+
+    #Pharmacy-Jobs .job-listing-wrapper ul li li {
+        padding-left: 0px;
+        background: none;
+    }
+
+    #Pharmacy-Jobs .job-listing-wrapper p {
+        padding-left: 10px;
+    }
+
+    #Pharmacy-Jobs .job-listing-wrapper .jobs-item ul li {
+        padding-left: 25px;
+        list-style: disc inside;
+    }
+
+    #Pharmacy-Jobs a.active-page {
+        color: #505050;
+        float: left;
+        padding-left: 6px;
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #Pharmacy-Jobs a.inactive-page {
+        float: left;
+        padding-left: 6px;
+        cursor: pointer;
+    }
+
+    #PageUpPeopleLink {
+        display: none;
+    }
+
+    #Pharmacy-Jobs li.jobs-item {
+        border-bottom: #eee 1px solid;
+        margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
-  <div id="jobs-module">Loading jobs...</div>
+  <div id="Pharmacy-Jobs">
+    Loading jobs...
+  </div>
 
-  <script type="module" src="https://careers-static.pageuppeople.com/Jobs-39170149918616823646177135332332305121163.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      if (typeof Careers !== 'undefined' && Careers.jobListing) {
+        Careers.jobListing("Pharmacy-Jobs", "https://careers.pageuppeople.com/532/", "cw", "en", {
+          template: "<b><a href='[JobDetailUrl]'>[Title]</a></b> <br/> <p>[Summary]</p>",
+          jobsPerPage: 5,
+          paging: true,
+          filters: { "Keyword": "Pharmacy" }
+        });
+      } else {
+        console.error("CareersControls.js did not load correctly.");
+      }
+    };
+  </script>
 </body>
 </html>
